@@ -19,7 +19,7 @@ import java.util.Objects;
 
 @Log4j
 @RestController
-@Api(value = "v1",description = "用户管理系统")
+@Api(value = "v1",description = "")
 @RequestMapping("v1")
 public class UserManager {
 
@@ -37,6 +37,13 @@ public class UserManager {
             log.info("登录的用户是："+user.getUserName());
             return true;
         }
+        return false;
+    }
+
+    @ApiOperation(value = "登录接口",httpMethod = "POST")
+    @RequestMapping(value = "/test",method = RequestMethod.GET)
+    public Boolean test(){
+        System.out.println("test");
         return false;
     }
 
